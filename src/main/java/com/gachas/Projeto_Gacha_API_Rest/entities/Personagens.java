@@ -8,7 +8,7 @@ import java.util.Objects;
 @Table(name = "personagens")
 public class Personagens {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column(name = "idpersonagem")
     private Integer idPersonagem;
 
@@ -24,18 +24,30 @@ public class Personagens {
     @Column(name = "elementopersonagem")
     private String elementoPersonagem;
 
+    @Column(name = "imgurl")
+    private String imgUrl;
+
     public Personagens(){
 
     }
 
-    public Personagens(Integer idPersonagem, String nomePersonagem, String gachaDoPersonagem, String armaPersonagem, String elementoPersonagem) {
+    public Personagens(Integer idPersonagem, String nomePersonagem, String gachaDoPersonagem, String armaPersonagem, String elementoPersonagem, String imgUrl) {
         this.idPersonagem = idPersonagem;
         this.nomePersonagem = nomePersonagem;
         this.gachaDoPersonagem = gachaDoPersonagem;
         this.armaPersonagem = armaPersonagem;
         this.elementoPersonagem = elementoPersonagem;
+        this.imgUrl = imgUrl;
 
 
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public Integer getIdPersonagem() {
